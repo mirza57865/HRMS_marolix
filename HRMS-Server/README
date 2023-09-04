@@ -1,12 +1,14 @@
 
 With Docker:
-sudo apt install -y docker.io docker-compose
-https://github.com/mirza57865/HRMS_marolix.git
-sudo systemctl start docker
+install docker in ubuntu by going through the link  https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04
+sudo apt install git
+git clone https://github.com/mirza57865/HRMS_marolix.git
 sudo usermod -aG docker ubuntu
 sudo systemctl enable docker
-cd HRMS_marolix/HRMS-Server
+sudo systemctl start docker
+sudo systemctl status docker
 
+cd HRMS_marolix/HRMS-Server
 
 vi Dockerfile
  
@@ -58,8 +60,10 @@ docker image ls
 docker ps
 docker logs hrms-server_web_1
 cd mHRMS/
+
 vi settings.py 
- 
+ find database lin and make changes
+
 DATABASES = {
    'default': {
        'ENGINE': 'django.db.backends.postgresql',
